@@ -1,0 +1,15 @@
+<h3>Burgers!</h3>
+<ul>
+{{#each burgers}}
+    <li>
+        <p>{{id}}</p>
+        <p>{{burger_name}}</p>
+    </li>
+{{/each}}
+</ul>
+
+<form action="/" method="POST">
+    <label>Enter a burger to add to the stack</label>
+    <input type="text" name="burger_name">
+    <input type="submit">
+</form>

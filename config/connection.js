@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: keys.mysql.secret,
-    database: 'bamazonDB'
+    database: 'burgers_db'
 });
 
 // Make connection.
