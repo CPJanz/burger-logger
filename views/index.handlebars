@@ -1,15 +1,47 @@
-<h3>Burgers!</h3>
-<ul>
-{{#each burgers}}
-    <li>
-        <p>{{id}}</p>
-        <p>{{burger_name}}</p>
-    </li>
-{{/each}}
-</ul>
+<div class="header">
+    <h1>Welcome to Carl's Diner</h1>
+</div>
+<div>
+    <div class="burger-col">
+        <div class="inner-burger-col">
+            <h2>Burgers to eat!</h2>
+            <ul>
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <li>
+                            <span class="id">{{id}}.</span>
+                            <span class="burger-name">{{burger_name}}</span>
+                            <button class="eat-button" data-id="{{id}}">Eat dat Burger!</button>
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
 
-<form action="/" method="POST">
-    <label>Enter a burger to add to the stack</label>
-    <input type="text" name="burger_name">
-    <input type="submit">
-</form>
+    <div id="burger-container">
+        <form action="/add" method="POST"> 
+            <div class="bun top-bun"><label>Add a Burger</label></div>
+            <div class="condiment"></div>
+            <div class="meat"><input class="text-input" placeholder="Double cheeseburger" type="text" name="burger_name"></div>
+            <div class="bun bottom-bun"><input type="submit"></div>
+        </form>
+    </div>
+
+    <div class="burger-col">
+        <div class="inner-burger-col">
+            <h2>Burgers eaten!</h2>
+
+            <ul>
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <li>
+                            <span class="id">{{id}}.</span>
+                            <span class="burger-name">{{burger_name}}</span>
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>

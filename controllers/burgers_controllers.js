@@ -9,11 +9,21 @@ router.get("/", function(req, res) {
     })
 })
 
-router.post("/", function(req, res) {
+router.post("/eat", function(req, res) {
+    burger.eatBurger(req.body.id, function(data) {
+        if (data.changedRows === 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return res.status(404).end();
+        }
+        res.status(200).end();
+    })
+})
+
+router.post("/add", function(req, res) {
     burger.addBurger(req.body.burger_name, function(data) {
         res.redirect("/");
     })
 })
 
 
-module.exports = router;
+module.exports = router

@@ -1,32 +1,31 @@
 const connection = require("./connection");
 
 const orm = {
-    /**
-     * Queries a specified table and uses the specified column data in a passed function.
-     * @param {string} cols
-     * @param {string} table
-     * @param {function} cb
-     */
+    /** Reads from a specified table and uses the column data in a passed function. */
     selectAll: function(cols, table, cb) {
         let queryString = "SELECT * FROM ??";
         connection.query(queryString, [table], function(err, result) {
             if (err) throw err;
             cb(result);
         })
-        console.log("Select All");
     },
 
+    /** Creates a new entry into the specified table with the specified values then uses the return value in a callback function. */
     insertOne: function(table, column, value, cb) {
         let queryString = "INSERT INTO ?? (??) VALUES (?)";
         connection.query(queryString, [table, column, value], function(err, result) {
             if (err) throw err;
             cb(result);
         })
-        console.log("insert one");
     },
 
-    updateOne: function() {
-        console.log("update one");
+    /** Updates a specified column in a specified row then uses the return value in a callback function. */
+    updateOne: function(table, id, column, value, cb) {
+        let queryString = "UPDATE ?? SET ?? = ? WHERE id = ?";
+        connection.query(queryString, [table, column, value, id], function(err, result) {
+            if (err) throw err;
+            cb(result);
+        })
     }
 }
 module.exports = orm;

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Cherry+Cream+Soda');
+body {
+    background-image: url("../img/fabric_plaid/fabric_plaid.png");
+    background-color: rgba(255, 0, 0, .3);
+    background-blend-mode: multiply;
+}
+
+h1,
+h2 {
+    font-family: 'Cherry Cream Soda', cursive;
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    margin: 60px auto;
+}
+
+.burger-col {
+    width: calc(50% - 160px);
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.inner-burger-col {
+    border: 3px red solid;
+    margin: 5px;
+    padding: 0 20px 20px 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 10px 0;
+}
+
+#burger-container {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 5px;
+}
+
+.bun,
+.meat,
+.condiment {
+    width: 100%;
+}
+
+.bun {
+    background-color: #a77932;
+}
+
+.top-bun {
+    border-radius: 50% 50% 5px 5px;
+    font-family: 'Cherry Cream Soda', cursive;
+    font-size: 40px;
+    padding: 15px 0 5px 0;
+    line-height: 100%;
+    vertical-align: baseline;
+    text-align: center;
+}
+
+.bottom-bun {
+    height: 2.25em;
+    border-radius: 5px 5px 10px 10px;
+}
+
+.meat {
+    background-color: #633200;
+    border-radius: 0 0 3px 3px;
+    padding: 3px 0;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+}
+
+.text-input {
+    background-color: #633100;
+    color: white;
+    width: 90%;
+}
+
+.condiment {
+    background-color: #fb3434;
+    height: .2em;
+    border-radius: 5px 5px 0 0
+}

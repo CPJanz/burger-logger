@@ -7,6 +7,10 @@ const burger = {
 
     addBurger: function(burgerName, cb) {
         orm.insertOne("burgers", "burger_name", burgerName, cb);
+    },
+
+    eatBurger: function(burgerId, cb) {
+        orm.updateOne("burgers", burgerId, "devoured", true, cb);
     }
 };
 
