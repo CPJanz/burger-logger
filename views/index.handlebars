@@ -1,5 +1,7 @@
 <div class="header">
-    <h1>Welcome to Carl's Diner</h1>
+    <span>
+        <h1>Welcome to Carl's Diner</h1>
+    </span>
 </div>
 <div>
     <div class="burger-col">
@@ -23,7 +25,7 @@
         <form action="/add" method="POST"> 
             <div class="bun top-bun"><label>Add a Burger</label></div>
             <div class="condiment"></div>
-            <div class="meat"><input class="text-input" placeholder="Double cheeseburger" type="text" name="burger_name"></div>
+            <div class="meat"><input class="text-input" required="required" placeholder="Double cheeseburger" type="text" name="burger_name"></div>
             <div class="bun bottom-bun"><input type="submit"></div>
         </form>
     </div>

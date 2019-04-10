@@ -43,6 +43,7 @@ li {
     display: inline-block;
     vertical-align: top;
     margin: 0 5px;
+    filter: drop-shadow(0 0 30px #333);
 }
 
 .bun,

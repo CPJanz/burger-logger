@@ -1,11 +1,16 @@
 const mysql = require("mysql");
 const keys = require("./keys");
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: keys.mysql.secret,
-    database: 'burgers_db'
-});
+
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    var connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: keys.mysql.secret,
+        database: 'burgers_db'
+    });
+}
 
 // Make connection.
 connection.connect(function(err) {
