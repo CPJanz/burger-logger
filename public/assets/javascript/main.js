@@ -1,6 +1,10 @@
 $(".eat-button").click(function() {
-    //post route eat da burger
-    $.post("/eat", { id: $(this).data("id") }, function(data) {
+    //put route eat da burger
+    $.ajax(
+        "/eat", {
+            type: "put",
+            data: { id: $(this).data("id") }
+        }).then(function(data) {
         location.reload();
-    })
+    });
 })
